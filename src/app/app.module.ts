@@ -11,6 +11,8 @@ import { AppRoutingModule } from './app-routing.module';
 import { LandingPageComponent } from './landing-page/landing-page.component';
 import { SingleFaceSnapComponent } from './single-face-snap/single-face-snap.component';
 
+import { HttpClientModule } from '@angular/common/http';
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -18,16 +20,11 @@ import { SingleFaceSnapComponent } from './single-face-snap/single-face-snap.com
     FaceSnapListComponent,
     HeaderComponent,
     LandingPageComponent,
-    SingleFaceSnapComponent
+    SingleFaceSnapComponent,
   ],
-  imports: [
-    BrowserModule,
-    AppRoutingModule
-  ],
-  providers: [
-    { provide: LOCALE_ID, useValue: 'fr-FR' }
-  ],
-  bootstrap: [AppComponent]
+  imports: [BrowserModule, AppRoutingModule, HttpClientModule],
+  providers: [{ provide: LOCALE_ID, useValue: 'fr-FR' }],
+  bootstrap: [AppComponent],
 })
 export class AppModule {
   constructor() {
